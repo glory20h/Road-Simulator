@@ -5,19 +5,20 @@ using System.IO;
 
 public class CameraLabeler : MonoBehaviour
 {
-    void CreateText()
+    string content;
+
+    public void ExportText()
     {
         //Path of the file
-        string path = Application.dataPath + "/Log.txt";
+        string path = Application.dataPath + "/Mapcontent.txt";
         //Create File if it doesn't exist
         if (!File.Exists(path))
         {
-            File.WriteAllText(path, "Login log \n\n");
+            File.WriteAllText(path, "start \n\n");
         }
         //Content of the file
-        string content = "Login date: " + System.DateTime.Now + "\n";
         //Add some to text to it
-        File.AppendAllText(path, content);
+        File.AppendAllText(path, "12310" + content + "\n");
     }
 
     // Start is called before the first frame update
